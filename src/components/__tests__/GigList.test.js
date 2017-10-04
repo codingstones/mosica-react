@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { GigsDay } from '../GigsDay';
 import {fakeGigsByDay} from '../__mocks__/fake-gigs-by-day';
+import { GigList } from '../GigList';
 
-it('renders GigsDay', () => {
+it('renders GigList', () => {
   const component = renderer.create(
-    <GigsDay days={fakeGigsByDay} onClick={jest.fn}/>
+    <GigList gigs={fakeGigsByDay[0].gigs} onClick={jest.fn}/>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

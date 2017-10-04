@@ -1,7 +1,7 @@
 import React from 'react';
-import { Gigs } from './Gigs';
+import { GigList } from './GigList';
 
-export const GigsDay = (props) => {
+export const DayWithGigs = (props) => {
   const {days, onClick} = props;
   return (
     <div>
@@ -10,7 +10,7 @@ export const GigsDay = (props) => {
           <div className="day">
             {day.day}
           </div>
-          <Gigs gigs={day.gigs} onClick={onClick}/>
+          <GigList gigs={day.gigs} onClick={onClick}/>
         </div>
       )}
     </div>

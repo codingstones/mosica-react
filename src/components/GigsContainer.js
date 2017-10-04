@@ -3,7 +3,7 @@ import './App.css';
 import fetchJsonp from 'fetch-jsonp'
 import * as mosicaCore from 'mosica-core'
 import { HttpClient } from '../services/HttpClient'
-import { GigsDay } from './GigsDay';
+import { DayWithGigs } from './DayWithGigs';
 import { LoadSpinner } from './LoadSpinner';
 import { withRouter } from 'react-router-dom'
 import { MyRouter } from '../services/MyRouter';
@@ -31,7 +31,7 @@ class GigsContainer extends Component {
     return (
       <div>
         <LoadSpinner isLoading={this.state.isLoading}/>
-        <GigsDay days={this.state.gigsByDay} onClick={this.goToGig}/>
+        <DayWithGigs days={this.state.gigsByDay} onClick={this.goToGig}/>
       </div>
     );
   }
