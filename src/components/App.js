@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
+import logo from '../logo.png';
 import './App.css';
 import fetchJsonp from 'fetch-jsonp'
 import * as mosicaCore from 'mosica-core'
-import { HttpClient } from './services/HttpClient'
-import { GigsDay } from './components/GigsDay';
+import { HttpClient } from '../services/HttpClient'
+import { GigsDay } from './GigsDay';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends Component {
   async componentDidMount() {
     const gigService = new mosicaCore.GigService(HttpClient(fetchJsonp), new mosicaCore.Matcher())
     const gigsByDay = await gigService.retrieveNextGigs()
-    this.setState({ gigsByDay })
+    return this.setState({ gigsByDay })
   }
 
   render() {
@@ -26,12 +26,6 @@ class App extends Component {
           <h1 className="App-title">Mosica React</h1>
         </header>
         <GigsDay days={this.state.gigsByDay}/>
-
-
-        <div className="Day">
-          DAY A BORRAR1
-        </div>
-
       </div>
     );
   }

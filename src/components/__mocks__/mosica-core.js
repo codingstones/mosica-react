@@ -1,9 +1,9 @@
-import { sampleGigs } from './gigs-sample'
+import { fakeGigsByDay } from './fake-gigs-by-day'
 const mosicaCore = jest.genMockFromModule('mosica-core')
 
 class GigService {
   retrieveNextGigs() {
-    return Promise.resolve(sampleGigs)
+    return Promise.resolve(fakeGigsByDay)
   }
 }
 

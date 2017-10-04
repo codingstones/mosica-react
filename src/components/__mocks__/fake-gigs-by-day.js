@@ -1,4 +1,4 @@
-export const sampleGigs = [
+export const fakeGigsByDay = [
   {
     'day': 'Lunes, 18 de Septiembre',
     'gigs': [
@@ -7,7 +7,7 @@ export const sampleGigs = [
         'title': 'Anarchy in the JS',
         'lat_lng': '41.641851935961654,-0.8751129897638315',
         'address': 'BCN',
-        'description': 'Coding Stones',
+        'description': 'Coding Stones Gig',
         'price': '',
         'image_url': 'http://www.zaragoza.es/cont/paginas/actividades/imagen/web_320x480px.png',
         'affiliate_url': null,
@@ -29,10 +29,10 @@ export const sampleGigs = [
       },
       {
         'id': '2222222',
-        'title': 'wtfJS',
+        'title': 'Vegan Microservices',
         'lat_lng': '41.641851935961654,-0.8751129897638315',
         'address': 'BCN',
-        'description': 'Coding Stones',
+        'description': 'Another Coding Stones Gig',
         'price': '',
         'image_url': 'http://www.wtf.es/wtf.png',
         'affiliate_url': null,

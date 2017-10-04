@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders GigsDay 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    Anarchy in the JS
+    -
+    SCBCN
+  </div>
+  <div
+    className="row"
+  >
+    Vegan Microservices
+    -
+    Around the world
+  </div>
+</div>
+`;
