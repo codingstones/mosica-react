@@ -1,4 +1,4 @@
-export default class AppPO {
+export default class GigContainerPO {
   constructor(wrapper) {
     this.wrapper = wrapper;
   }
@@ -18,5 +18,13 @@ export default class AppPO {
 
   text() {
     return this.wrapper.text();
+  }
+
+  clickFirstGig() {
+    return this.wrapper.find('.row').first().simulate('click');
+  }
+
+  clickSecondGig() {
+    return this.wrapper.find('.row').at(1).simulate('click');
   }
 }

@@ -4,6 +4,7 @@ exports[`renders GigsDay 1`] = `
 <div>
   <div
     className="row"
+    onClick={[Function]}
   >
     Anarchy in the JS
     -
@@ -11,6 +12,7 @@ exports[`renders GigsDay 1`] = `
   </div>
   <div
     className="row"
+    onClick={[Function]}
   >
     Vegan Microservices
     -

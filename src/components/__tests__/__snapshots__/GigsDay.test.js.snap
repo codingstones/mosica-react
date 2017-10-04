@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders GigsDay 1`] = `
+<div>
+  <div
+    className="gigs"
+  >
+    <div
+      className="day"
+    >
+      Lunes, 18 de Septiembre
+    </div>
+    <div>
+      <div
+        className="row"
+        onClick={[Function]}
+      >
+        Anarchy in the JS
+        -
+        SCBCN
+      </div>
+      <div
+        className="row"
+        onClick={[Function]}
+      >
+        Vegan Microservices
+        -
+        Around the world
+      </div>
+    </div>
+  </div>
+</div>
+`;

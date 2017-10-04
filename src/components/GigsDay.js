@@ -2,15 +2,15 @@ import React from 'react';
 import { Gigs } from './Gigs';
 
 export const GigsDay = (props) => {
-  const {days} = props;
+  const {days, onClick} = props;
   return (
     <div>
       {days.map((day) =>
         <div className="gigs" key={day.day}>
-          <a className="day" href={day} target="_blank">
+          <div className="day">
             {day.day}
-          </a>
-          <Gigs gigs={day.gigs}/>
+          </div>
+          <Gigs gigs={day.gigs} onClick={onClick}/>
         </div>
       )}
     </div>

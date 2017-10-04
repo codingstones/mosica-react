@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders GigsContainer 1`] = `
+<div>
+  <div
+    className="spinner"
+  >
+    <p>
+      Loading...
+    </p>
+  </div>
+  <div />
+</div>
+`;
