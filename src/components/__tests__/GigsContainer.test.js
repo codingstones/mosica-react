@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { GigsContainerWithoutRouter as GigsContainer } from '../GigsContainer';
-import AppPO from '../__page_objects__/GigContainerPO';
+import GigsContainerPO from '../__page_objects__/GigContainerPO';
 import {fakeGigsByDay} from '../__mocks__/fake-gigs-by-day';
 import { MyRouter } from '../../services/MyRouter';
 jest.mock('../../services/MyRouter');
@@ -21,42 +21,42 @@ it('renders GigsContainer', () => {
 
 describe('When GigsContainer is rendered with async gigs', async () => {
 
-  let app, wrapper;
+  let container, wrapper;
   beforeEach(async () => {
     wrapper = mount(
       <GigsContainer />
     );
-    app = new AppPO(wrapper);
-    await app.updateAsync();
+    container = new GigsContainerPO(wrapper);
+    await container.updateAsync();
 
   });
 
   it('shows a concrete gig title', async () => {
     const GIG_TITLE = fakeGigsByDay[0].gigs[1].title;
-    expect(app.text()).toContain(GIG_TITLE);
+    expect(container.text()).toContain(GIG_TITLE);
   });
 
   it('shows days', async () => {
     const DAYS = fakeGigsByDay.map((day)=> day.day);
-    expect(app.dayTexts()).toEqual(DAYS);
+    expect(container.dayTexts()).toEqual(DAYS);
   });
 
   it('shows gigs for each day', async () => {
     //IS THIS TEST WORTHY? Maybe easier to unit-test components
-    let expected_gigs;
+    let expectedGigs;
     fakeGigsByDay.map((day, index)=> {
-      expected_gigs = day.gigs.map((gig) => gig.title + '-' + gig.place)
-      expect(app.gigRowsFor(index)).toEqual(expected_gigs);
+      expectedGigs = day.gigs.map((gig) => gig.title + '-' + gig.place)
+      expect(container.gigRowsFor(index)).toEqual(expectedGigs);
     });
   });
 
   it('navigates to gig detail when click', async () => {
-    app.clickFirstGig();
+    container.clickFirstGig();
     expect(navigateToGigMock).toHaveBeenCalledWith('123456');
   });
 
   it('navigates to gig detail when click', async () => {
-    app.clickSecondGig();
+    container.clickSecondGig();
     expect(navigateToGigMock).toHaveBeenCalledWith('2222222');
   });
 });
