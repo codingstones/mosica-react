@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { GigsContainerWithoutRouter as GigsContainer } from '../GigsContainer';
-import GigsContainerPO from '../__page_objects__/GigContainerPO';
+import GigsContainerPage from '../__page_objects__/GigContainerPage';
 import {fakeGigsByDay} from '../__mocks__/fake-gigs-by-day';
 import { MyRouter } from '../../services/MyRouter';
 jest.mock('../../services/MyRouter');
@@ -11,34 +11,48 @@ beforeEach(() => {
   navigateToGigMock = MyRouter().navigateToGig
   navigateToGigMock.mockClear()
 });
-// jest.unmock('mosica-core')
 
-it('renders GigsContainer', () => {
-  const component = renderer.create(<GigsContainer />);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
 
 describe('When GigsContainer is rendered with async gigs', async () => {
 
-  let container, wrapper;
+  let page, wrapper;
   beforeEach(async () => {
     wrapper = mount(
       <GigsContainer />
     );
-    container = new GigsContainerPO(wrapper);
-    await container.updateAsync();
+    page = new GigsContainerPage(wrapper);
+    await page.updateAsync();
 
   });
 
-  it('shows a concrete gig title', async () => {
+  it('renders GigsContainer', () => {
+    page.matchSnapshot()
+  });
+
+  it('renders a concrete gig title', async () => {
     const GIG_TITLE = fakeGigsByDay[0].gigs[1].title;
-    expect(container.text()).toContain(GIG_TITLE);
+    page.containsText(GIG_TITLE);
   });
 
-  it('shows days', async () => {
-    const DAYS = fakeGigsByDay.map((day)=> day.day);
-    expect(container.dayTexts()).toEqual(DAYS);
+  it('renders the first day of gigs', async () => {
+    const FIRST_DAY_GIG_TEXTS = fakeGigsByDay[0].gigs.map(
+      gig => gig.title + '-' + gig.place)
+
+    FIRST_DAY_GIG_TEXTS.map((text) =>
+      page.containsText(text)
+    )
+  });
+
+  it('navigates to first gig detail', async () => {
+    const FIRST_GIG_ID = '123456'
+    page.clickFirstGig();
+    expect(navigateToGigMock).toHaveBeenCalledWith(FIRST_GIG_ID);
+  });
+
+  it('navigates to second gig detail', async () => {
+    const SECOND_GIG_ID = '2222222'
+    page.clickSecondGig();
+    expect(navigateToGigMock).toHaveBeenCalledWith(SECOND_GIG_ID);
   });
 
   it('shows gigs for each day', async () => {
@@ -46,18 +60,9 @@ describe('When GigsContainer is rendered with async gigs', async () => {
     let expectedGigs;
     fakeGigsByDay.map((day, index)=> {
       expectedGigs = day.gigs.map((gig) => gig.title + '-' + gig.place)
-      expect(container.gigRowsFor(index)).toEqual(expectedGigs);
+      expect(page.gigRowsFor(index)).toEqual(expectedGigs);
     });
   });
 
-  it('navigates to gig detail when click', async () => {
-    container.clickFirstGig();
-    expect(navigateToGigMock).toHaveBeenCalledWith('123456');
-  });
-
-  it('navigates to gig detail when click', async () => {
-    container.clickSecondGig();
-    expect(navigateToGigMock).toHaveBeenCalledWith('2222222');
-  });
 });
 
