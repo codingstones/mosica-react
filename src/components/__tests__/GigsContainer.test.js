@@ -1,10 +1,10 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { GigsContainerWithoutRouter as GigsContainer } from '../GigsContainer';
-import GigsContainerPage from '../__page_objects__/GigContainerPage';
-import {fakeGigsByDay} from '../__mocks__/fake-gigs-by-day';
 import { MyRouter } from '../../services/MyRouter';
+import { fakeGigsByDay } from '../__mocks__/fake-gigs-by-day';
+import GigsContainerPage from '../__page_objects__/GigContainerPage';
+import { GigsContainerWithoutRouter as GigsContainer } from '../GigsContainer';
+
 jest.mock('../../services/MyRouter');
 let navigateToGigMock;
 beforeEach(() => {
@@ -25,7 +25,7 @@ describe('When GigsContainer is rendered with async gigs', async () => {
 
   });
 
-  it('renders GigsContainer', () => {
+  it('full snapshot', () => {
     page.matchSnapshot()
   });
 
