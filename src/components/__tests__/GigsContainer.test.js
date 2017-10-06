@@ -6,10 +6,10 @@ import GigsContainerPO from '../__page_objects__/GigContainerPO';
 import {fakeGigsByDay} from '../__mocks__/fake-gigs-by-day';
 import { MyRouter } from '../../services/MyRouter';
 jest.mock('../../services/MyRouter');
-let navigateToGigMock;
+let navigateToGigSpy;
 beforeEach(() => {
-  navigateToGigMock = MyRouter().navigateToGig
-  navigateToGigMock.mockClear()
+  navigateToGigSpy = MyRouter().navigateToGig
+  navigateToGigSpy.mockClear()
 });
 // jest.unmock('mosica-core')
 
@@ -52,12 +52,11 @@ describe('When GigsContainer is rendered with async gigs', async () => {
 
   it('navigates to gig detail when click', async () => {
     container.clickFirstGig();
-    expect(navigateToGigMock).toHaveBeenCalledWith('123456');
+    expect(navigateToGigSpy).toHaveBeenCalledWith('123456');
   });
 
   it('navigates to gig detail when click', async () => {
     container.clickSecondGig();
-    expect(navigateToGigMock).toHaveBeenCalledWith('2222222');
+    expect(navigateToGigSpy).toHaveBeenCalledWith('2222222');
   });
 });
-
