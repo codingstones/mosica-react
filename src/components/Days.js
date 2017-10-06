@@ -3,13 +3,13 @@ import './App.css';
 import fetchJsonp from 'fetch-jsonp'
 import * as mosicaCore from 'mosica-core'
 import { HttpClient } from '../services/HttpClient'
-import { DayWithGigs } from './DayWithGigs';
+import { Day } from './Day';
 import { LoadSpinner } from './LoadSpinner';
 import { withRouter } from 'react-router-dom'
 import { MyRouter } from '../services/MyRouter';
 
 
-class GigsContainer extends Component {
+export class DaysWithoutRouter extends Component {
   constructor(props) {
     super(props)
     this.state = { gigsByDay: [], isLoading: true }
@@ -31,11 +31,12 @@ class GigsContainer extends Component {
     return (
       <div>
         <LoadSpinner isLoading={this.state.isLoading}/>
-        <DayWithGigs days={this.state.gigsByDay} onClick={this.goToGig}/>
+        {this.state.gigsByDay.map((day) =>
+          <Day key={day.day} day={day} onClick={this.goToGig}/>
+        )}
       </div>
     );
   }
 }
 
-export default withRouter(GigsContainer);
-export const GigsContainerWithoutRouter = GigsContainer;
+export default withRouter(DaysWithoutRouter);

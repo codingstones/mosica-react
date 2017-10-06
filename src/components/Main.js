@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import GigsContainer from './GigsContainer';
+import GigsContainer from './Days';
 import { GigDetail } from './GigDetail';
 
 const Main = () => (

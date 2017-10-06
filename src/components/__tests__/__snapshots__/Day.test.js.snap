@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders GigList 1`] = `
-<div>
+exports[`renders Days 1`] = `
+<div
+  className="gigs"
+>
+  <div
+    className="day"
+  >
+    Lunes, 18 de Septiembre
+  </div>
   <div
     className="row"
     onClick={[Function]}

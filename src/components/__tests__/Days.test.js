@@ -2,8 +2,8 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { MyRouter } from '../../services/MyRouter';
 import { fakeGigsByDay } from '../__mocks__/fake-gigs-by-day';
-import GigsContainerPage from '../__page_objects__/GigContainerPage';
-import { GigsContainerWithoutRouter as GigsContainer } from '../GigsContainer';
+import DaysPage from '../__page_objects__/GigContainerPage';
+import { DaysWithoutRouter as Days } from '../Days';
 
 jest.mock('../../services/MyRouter');
 let navigateToGigMock;
@@ -13,14 +13,14 @@ beforeEach(() => {
 });
 
 
-describe('When GigsContainer is rendered with async gigs', async () => {
+describe('Days', async () => {
 
   let page, wrapper;
   beforeEach(async () => {
     wrapper = mount(
-      <GigsContainer />
+      <Days />
     );
-    page = new GigsContainerPage(wrapper);
+    page = new DaysPage(wrapper);
     await page.updateAsync();
 
   });
