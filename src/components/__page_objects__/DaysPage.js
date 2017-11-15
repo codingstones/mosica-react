@@ -1,13 +1,15 @@
 import toJson from 'enzyme-to-json'
+import { wait } from '../../../test/helpers'
+import { GigRow } from '../GigRow'
 
-export default class GigContainerPage {
+export default class DaysPage {
   constructor(wrapper) {
     this.wrapper = wrapper
   }
 
-  async updateAsync() {
-    await flushPromises()
-    this.wrapper.update()
+  async wait() {
+    await wait()
+    return this.wrapper.update()
   }
 
   matchSnapshot() {
@@ -30,11 +32,19 @@ export default class GigContainerPage {
     return this.wrapper.text()
   }
 
-  clickFirstGig() {
-    return this.wrapper.find('.row').first().simulate('click')
+  html() {
+    return this.wrapper.html()
+  }
+
+  setRouter(router) {
+    this.wrapper.instance().router = router
+  }
+
+  async clickFirstGig() {
+    return this.wrapper.find(GigRow).first().simulate('click')
   }
 
   clickSecondGig() {
-    return this.wrapper.find('.row').at(1).simulate('click')
+    return this.wrapper.find(GigRow).at(1).simulate('click')
   }
 }

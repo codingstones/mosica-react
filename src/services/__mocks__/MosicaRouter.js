@@ -1,10 +1,10 @@
 const navigateToGigMock = jest.fn()
 const RouterMock = { navigateToGig: navigateToGigMock}
 
-const MyRouter = (history)=> {
+const MosicaRouter = (history)=> {
   return RouterMock;
 }
 module.exports = {
-  MyRouter: MyRouter,
+  MosicaRouter
 }
 

@@ -6,14 +6,14 @@ import { HttpClient } from '../services/HttpClient'
 import { Day } from './Day';
 import { LoadSpinner } from './LoadSpinner';
 import { withRouter } from 'react-router-dom'
-import { MyRouter } from '../services/MyRouter';
+import { MosicaRouter } from '../services/MosicaRouter';
 
 
 export class DaysWithoutRouter extends Component {
   constructor(props) {
     super(props)
     this.state = { gigsByDay: [], isLoading: true }
-    this.router = MyRouter(this.props.history)
+    this.router = MosicaRouter(this.props.history)
   }
 
   async componentDidMount() {

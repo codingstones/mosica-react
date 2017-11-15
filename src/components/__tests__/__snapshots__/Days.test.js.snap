@@ -15,7 +15,7 @@ exports[`Days full snapshot 1`] = `
               "address": "BCN",
               "affiliate_url": null,
               "day": "2017-09-18",
-              "description": "Coding Stones Gig",
+              "description": "Coding Stones GigRow",
               "hour": "19:30",
               "id": "123456",
               "image_url": "http://www.zaragoza.es/cont/paginas/actividades/imagen/web_320x480px.png",
@@ -40,7 +40,7 @@ exports[`Days full snapshot 1`] = `
               "address": "BCN",
               "affiliate_url": null,
               "day": "2017-12-03",
-              "description": "Another Coding Stones Gig",
+              "description": "Another Coding Stones GigRow",
               "hour": "19:30",
               "id": "2222222",
               "image_url": "http://www.wtf.es/wtf.png",
@@ -59,7 +59,7 @@ exports[`Days full snapshot 1`] = `
               ],
               "schedule_id": 5280,
               "slug": "stones",
-              "title": "Vegan Microservices",
+              "title": "Anarchy in the Codemotion",
             },
           ],
         }
@@ -82,7 +82,7 @@ exports[`Days full snapshot 1`] = `
               "address": "BCN",
               "affiliate_url": null,
               "day": "2017-09-18",
-              "description": "Coding Stones Gig",
+              "description": "Coding Stones GigRow",
               "hour": "19:30",
               "id": "123456",
               "image_url": "http://www.zaragoza.es/cont/paginas/actividades/imagen/web_320x480px.png",
@@ -123,7 +123,7 @@ exports[`Days full snapshot 1`] = `
               "address": "BCN",
               "affiliate_url": null,
               "day": "2017-12-03",
-              "description": "Another Coding Stones Gig",
+              "description": "Another Coding Stones GigRow",
               "hour": "19:30",
               "id": "2222222",
               "image_url": "http://www.wtf.es/wtf.png",
@@ -142,7 +142,7 @@ exports[`Days full snapshot 1`] = `
               ],
               "schedule_id": 5280,
               "slug": "stones",
-              "title": "Vegan Microservices",
+              "title": "Anarchy in the Codemotion",
             }
           }
           key="2222222"
@@ -153,7 +153,7 @@ exports[`Days full snapshot 1`] = `
             key="2222222"
             onClick={[Function]}
           >
-            Vegan Microservices
+            Anarchy in the Codemotion
             -
             Around the world
           </div>

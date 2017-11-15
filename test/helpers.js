@@ -36,5 +36,5 @@ export function Wrap(component) {
 }
 
 export function wait() {
-  return new Promise(resolve => setImmediate(resolve))
+  return new Promise(resolve => setTimeout(resolve))
 }

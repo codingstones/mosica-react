@@ -7,7 +7,7 @@ export const fakeGigsByDay = [
         'title': 'Anarchy in the JS',
         'lat_lng': '41.641851935961654,-0.8751129897638315',
         'address': 'BCN',
-        'description': 'Coding Stones Gig',
+        'description': 'Coding Stones GigRow',
         'price': '',
         'image_url': 'http://www.zaragoza.es/cont/paginas/actividades/imagen/web_320x480px.png',
         'affiliate_url': null,
@@ -29,10 +29,10 @@ export const fakeGigsByDay = [
       },
       {
         'id': '2222222',
-        'title': 'Vegan Microservices',
+        'title': 'Anarchy in the Codemotion',
         'lat_lng': '41.641851935961654,-0.8751129897638315',
         'address': 'BCN',
-        'description': 'Another Coding Stones Gig',
+        'description': 'Another Coding Stones GigRow',
         'price': '',
         'image_url': 'http://www.wtf.es/wtf.png',
         'affiliate_url': null,
@@ -55,3 +55,6 @@ export const fakeGigsByDay = [
     ]
   }
 ]
+
+export const FIRST_DAY_GIG_TEXTS = fakeGigsByDay[0].gigs.map(
+  gig => gig.title + '-' + gig.place)

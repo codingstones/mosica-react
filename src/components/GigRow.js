@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Gig = (props) => {
+export const GigRow = (props) => {
   const {gig, onClick} = props;
 
   return (

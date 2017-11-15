@@ -1,4 +1,4 @@
-export const MyRouter = (history) => {
+export const MosicaRouter = (history) => {
   return { navigateToGig }
 
   function navigateToGig(gigId) {

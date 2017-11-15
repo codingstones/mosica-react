@@ -21,7 +21,7 @@ exports[`renders Days 1`] = `
     className="row"
     onClick={[Function]}
   >
-    Vegan Microservices
+    Anarchy in the Codemotion
     -
     Around the world
   </div>

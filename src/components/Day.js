@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gig } from './Gig';
+import { GigRow } from './GigRow';
 
 export const Day = (props) => {
   const {day, onClick} = props;
@@ -9,7 +9,7 @@ export const Day = (props) => {
         {day.day}
       </div>
       {day.gigs.map((gig) =>
-        <Gig key={gig.id} gig={gig} onClick={onClick} />
+        <GigRow key={gig.id} gig={gig} onClick={onClick} />
       )}
     </div>
   );
