@@ -12,4 +12,4 @@ export const LoadSpinner = (props) => {
   } else {
     return null
   }
-};
+}

@@ -1,33 +1,27 @@
-import { mount } from 'enzyme'
 import React from 'react'
 import { fakeGigsByDay,FIRST_DAY_GIG_TEXTS } from '../__mocks__/fake-gigs-by-day'
 import DaysPage from '../__page_objects__/DaysPage'
 import { DaysWithoutRouter as Days } from '../Days'
+import { Wrap } from '../../../test/helpers'
+//We don't need jest.mock(..MosicaCore) cause it's a default manual mock
 
 describe('Days', async () => {
 
-  let page, wrapper
+  let page
   beforeEach(async () => {
-    wrapper = mount(
-      <Days />
-    )
+    const wrapper = Wrap(<Days/>).mount()
     page = new DaysPage(wrapper)
     await page.wait()
   })
 
-  it('full snapshot', () => {
-    page.matchSnapshot()
-  })
-
-  it('renders a concrete gig title', async () => {
-    const GIG_TITLE = fakeGigsByDay[0].gigs[1].title
-    page.containsText(GIG_TITLE)
-  })
-
-  it('renders the first day of gigs', async () => {
+  it('renders the texts of the first day of gigs', async () => {
     FIRST_DAY_GIG_TEXTS.map((text) =>
       page.containsText(text)
     )
+  })
+
+  it('full snapshot', () => {
+    page.matchSnapshot()
   })
 
   describe('When clicking gig', ()=> {

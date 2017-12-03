@@ -8,7 +8,7 @@ export function rejectedPromise(promiseError) {
   return jest.fn(() => Promise.reject(promiseError))
 }
 
-export function Wrap(component) {
+export function Wrap(Component) {
 
   return {mount, shallow, withProps, withParamId}
 
@@ -18,18 +18,18 @@ export function Wrap(component) {
   }
 
   function withParamId(id) {
-    component.methods.paramId = () => id
+    Component.methods.paramId = () => id
     return this
   }
 
   function mount() {
-    const wrapper = _mount(component)
+    const wrapper = _mount(Component)
     wrapper.setProps(this.props)
     return wrapper
   }
 
   function shallow() {
-    const wrapper = _shallow(component)
+    const wrapper = _shallow(Component)
     wrapper.setProps(this.props)
     return wrapper
   }
