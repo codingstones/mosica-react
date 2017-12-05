@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import fetchJsonp from 'fetch-jsonp'
-import * as mosicaCore from 'mosica-core'
-import { HttpClient } from '../services/HttpClient'
-import { Day } from './Day';
-import { LoadSpinner } from './LoadSpinner';
 import { withRouter } from 'react-router-dom'
-import { MosicaRouter } from '../services/MosicaRouter';
-
+import { gigService } from '../services/service-instances'
+import { MosicaRouter } from '../services/MosicaRouter'
+import { Day } from './Day'
+import { LoadSpinner } from './LoadSpinner'
 
 export class DaysWithoutRouter extends Component {
   constructor(props) {
@@ -17,7 +13,6 @@ export class DaysWithoutRouter extends Component {
   }
 
   async componentDidMount() {
-    const gigService = new mosicaCore.GigService(HttpClient(fetchJsonp), new mosicaCore.Matcher())
     const gigsByDay = await gigService.retrieveNextGigs()
     this.setState({ isLoading: false })
     return this.setState({ gigsByDay })
