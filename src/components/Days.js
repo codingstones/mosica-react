@@ -19,7 +19,7 @@ export class DaysWithoutRouter extends Component {
   }
 
   goToGig = (gigId) => ()=> {
-    this.router.navigateToGig(gigId);
+    this.router.navigateToGig(gigId)
   }
 
   render() {
@@ -30,8 +30,8 @@ export class DaysWithoutRouter extends Component {
           <Day key={day.day} day={day} onClick={this.goToGig}/>
         )}
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(DaysWithoutRouter);
+export default withRouter(DaysWithoutRouter)
