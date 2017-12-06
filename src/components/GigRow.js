@@ -8,6 +8,7 @@ import Time from './Time'
 
 export const GigRow = (props) => {
   const {gig, onClick} = props
+  // console.log(gig)
   return (
     <Item key={gig.id} onClick={onClick(gig.id)}>
       <Item.Content>
