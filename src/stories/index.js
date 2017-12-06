@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
-import { Button } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import { fakeGigDetail } from '../components/__mocks__/fake-gig-detail'
 import { fakeGigsByDay, FIRST_GIG } from '../components/__mocks__/fake-gigs-by-day'
 import BuyTickets from '../components/BuyTickets'
@@ -26,8 +26,13 @@ storiesOf('Header', module).add('default', () => <Header/>)
 storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>)
-  .add('Big', () => <Button size='big' onClick={action('clicked')}>Big Button</Button>)
-  .add('Blue', () => <Button color='blue' onClick={action('clicked')}>Blue Button</Button>)
+  .add('With big size', () => <Button size='big' onClick={action('clicked')}>Big Button</Button>)
+  .add('With small size', () => <Button size='small' onClick={action('clicked')}>Small Button</Button>)
+  .add('With blue color', () => <Button color='blue' onClick={action('clicked')}>Blue Button</Button>)
+  .add('With red color', () => <Button color='red' onClick={action('clicked')}>Red Button</Button>)
+  .add('With circular shape', () => <Button circular onClick={action('clicked')}>Circular Button</Button>)
+  .add('With loading indicator', () => <Button loading onClick={action('clicked')}>Loading Button</Button>)
+  .add('With twitter icon', () => <Button onClick={action('clicked')}><Icon name='twitter' />Button With Icon</Button>)
 
 storiesOf('BuyTickets', module).add('default', () => <BuyTickets url="any url"/>)
 storiesOf('Likes', module).add('default', () => <Likes/>)
