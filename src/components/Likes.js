@@ -19,6 +19,7 @@ class Likes extends Component {
     return (
       <div>
         <Button
+          className='chromatic-ignore'
           color='red'
           content='Like'
           size='mini'
