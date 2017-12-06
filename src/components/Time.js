@@ -7,7 +7,7 @@ const Time = (props) => {
   return (
     <span>
       <Icon name='time' color='green'/>
-      {hour}
+      {hour} horas
     </span>
   )
 }

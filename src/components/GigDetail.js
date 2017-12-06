@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
+import { Card, Image } from 'semantic-ui-react'
 import { gigService } from '../services/service-instances'
+import BuyTickets from './BuyTickets'
+import Date from './Date'
+import ICS from './ICS'
+import Likes from './Likes'
+import Location from './Location'
+import Place from './Place'
 import Price from './Price'
+import Space from './Space'
+import Time from './Time'
 
 export class GigDetail extends Component {
   constructor(props) {
@@ -14,12 +23,38 @@ export class GigDetail extends Component {
   }
 
   render() {
-    console.dir(this.state.gig)
+    const gig = this.state.gig
     return (
-      <div className="row">
-        Detalle del GIG con ID {this.props.match.params.id}
-        <Price gig={this.state.gig}/>
-      </div>
+      <Card fluid raised color='blue'>
+        <Card.Content>
+        <Card.Header>
+          {gig.title}
+        </Card.Header>
+      <Card.Meta>
+        <Space/>
+        <Date date={gig.day}></Date>
+        <div></div>
+        <Time hour={gig.hour}></Time>
+        <div></div>
+        <Price price={gig.price}></Price>
+        <div></div>
+        <ICS slug={gig.slug}></ICS>
+        <Space/>
+      </Card.Meta>
+      <Card.Description>
+        <Image floated='right' height='300em' src={gig.image_url} />
+        {gig.description}
+        <Space/>
+        <Place place={gig.place} />  <Location coordinates={gig.lat_lng}></Location>
+        <Space/>
+        <BuyTickets url='any' />
+      </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <Likes></Likes>
+        {/*<Anchor icon="twitter square" url="http://twiiter.com"></Anchor>*/}
+      </Card.Content>
+    </Card>
     )
   }
 }
