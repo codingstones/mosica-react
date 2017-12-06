@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { gigService } from '../services/service-instances'
+import Price from './Price'
 
 export class GigDetail extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export class GigDetail extends Component {
     return (
       <div className="row">
         Detalle del GIG con ID {this.props.match.params.id}
+        <Price gig={this.state.gig}/>
       </div>
     )
   }
