@@ -1,17 +1,17 @@
-#Spike using React for Mosica
+# Spike using React for Mosica
 
 ![mosica][mosica]
 
 ## Getting Started!
 
-###Testing
+### Testing
 - yarn test
 - yarn chromatic
 
-###StoryBook:
+### StoryBook:
 - yarn storybook
 
-###Running app
+### Running app
 - yarn start
 
 [mosica]: ./art/mosica.gif
