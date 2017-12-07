@@ -1,6 +1,8 @@
-##Spike using React for Mosica
+#Spike using React for Mosica
 
-<img src="/art/mosica.gif?raw=true" width="400px">
+![mosica][mosica]
+
+## Getting Started!
 
 ###Testing
 - yarn test
@@ -11,3 +13,5 @@
 
 ###Running app
 - yarn start
+
+[mosica]: ./art/mosica.gif
