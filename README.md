@@ -8,17 +8,19 @@ As we explain in [this post](https://medium.com/coding-stones/experimentos-con-a
 we didn't want to duplicate the core logic of the mosica project, so we decided to create a [mosica-core](https://github.com/codingstones/mosica-core) universal project to be shared by all of our experiments.
 
 You need to clone [this project](https://github.com/codingstones/mosica-core) as mosica-core so it will be referenced from the package.json of the current project.
- 
+
+``` bash
 ### Dependencies
-- yarn 
-or 
-- npm run install
+$ yarn 
+or
+$ npm run install
 
 ### Testing
 - yarn test
-or 
+or
 - npm run test
 
+### Visual regression Testing
 - yarn chromatic
 or
 - npm run chromatic
