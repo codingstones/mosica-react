@@ -34,5 +34,6 @@ or
 - yarn start
 or 
 - npm run start
+```
 
 [mosica]: ./art/mosica.gif
