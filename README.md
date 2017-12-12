@@ -9,30 +9,53 @@ we didn't want to duplicate the core logic of the mosica project, so we decided 
 
 You need to clone [this project](https://github.com/codingstones/mosica-core) as mosica-core so it will be referenced from the package.json of the current project.
 
+### Installing Dependencies
 ``` bash
-### Dependencies
 $ yarn 
+```
 or
+``` bash
 $ npm run install
+```
 
 ### Testing
+``` bash
 - yarn test
+```
 or
+``` bash
 - npm run test
+```
+
 
 ### Visual regression Testing
+``` bash
 - yarn chromatic
+```
+
 or
+``` bash
 - npm run chromatic
+```
+
 
 ### StoryBook:
+``` bash
 - yarn storybook
+```
+
 or
+``` bash
 - npm run storybook
+```
+
 
 ### Running app
+``` bash
 - yarn start
+```
 or 
+``` bash
 - npm run start
 ```
 
