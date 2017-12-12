@@ -2,7 +2,7 @@
   "name": "mosica-react",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://myname.github.io/myapp",
+  "homepage" : "https://codingstones.github.io/mosica-react",
   "dependencies": {
     "fetch-jsonp": "^1.1.3",
     "react": "^16.1.1",
