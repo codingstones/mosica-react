@@ -1,7 +1,6 @@
 import React from 'react'
 
 const openMap = (coordinates) => () => {
-  console.log('KIO');
   const url = "https://www.google.es/maps/place/" + coordinates
   window.open(url, '_blank', 'location=yes')
 }
